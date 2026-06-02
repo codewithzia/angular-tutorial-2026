@@ -1,0 +1,94 @@
+
+  <!-- The Tour Section -->
+  <div class="tour-section" id="tour">
+    <div class="tour-container">
+      <div class="tour-header">
+        <h2 class="tour-title">TOUR DATES</h2>
+        <p class="tour-subtitle">Remember to book your tickets!</p>
+      </div>
+
+      <div class="tour-dates">
+        <div class="tour-date-item sold-out">
+          <span class="date-month">September</span>
+          <span class="date-status">Sold Out</span>
+        </div>
+        <div class="tour-date-item sold-out">
+          <span class="date-month">October</span>
+          <span class="date-status">Sold Out</span>
+        </div>
+        <div class="tour-date-item available">
+          <span class="date-month">November</span>
+          <span class="date-badge">3</span>
+        </div>
+      </div>
+
+      <div class="tour-cards">
+        <div class="tour-card">
+          <div class="tour-image">
+            <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="New York">
+            <div class="tour-overlay">
+              <button class="tour-buy-btn" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            </div>
+          </div>
+          <div class="tour-info">
+            <h3 class="tour-city">New York</h3>
+            <p class="tour-date">Fri 27 Nov 2016</p>
+            <p class="tour-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+          </div>
+        </div>
+        <div class="tour-card">
+          <div class="tour-image">
+            <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
+            <div class="tour-overlay">
+              <button class="tour-buy-btn" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            </div>
+          </div>
+          <div class="tour-info">
+            <h3 class="tour-city">Paris</h3>
+            <p class="tour-date">Sat 28 Nov 2016</p>
+            <p class="tour-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+          </div>
+        </div>
+        <div class="tour-card">
+          <div class="tour-image">
+            <img src="https://www.w3schools.com/w3images/sanfran.jpg" alt="San Francisco">
+            <div class="tour-overlay">
+              <button class="tour-buy-btn" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            </div>
+          </div>
+          <div class="tour-info">
+            <h3 class="tour-city">San Francisco</h3>
+            <p class="tour-date">Sun 29 Nov 2016</p>
+            <p class="tour-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal -->
+  <div id="ticketModal" class="ticket-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title"><i class="fa fa-suitcase"></i> Buy Tickets</h2>
+        <button class="modal-close" onclick="document.getElementById('ticketModal').style.display='none'">×</button>
+      </div>
+      <div class="modal-body">
+        <form class="ticket-form">
+          <div class="form-group">
+            <label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label>
+            <input class="form-input" type="number" placeholder="How many?" min="1">
+          </div>
+          <div class="form-group">
+            <label><i class="fa fa-user"></i> Send To</label>
+            <input class="form-input" type="email" placeholder="Enter email">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-pay">PAY <i class="fa fa-check"></i></button>
+            <button type="button" class="btn-close" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+          </div>
+          <p class="help-text">Need <a href="#">help?</a></p>
+        </form>
+      </div>
+    </div>
+  </div>

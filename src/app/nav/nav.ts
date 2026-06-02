@@ -4,10 +4,11 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-nav',
   imports: [RouterLink],
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css'
+  templateUrl: './nav.html',
+  styleUrl: './nav.css',
 })
-export class NavComponent {
+export class Nav {
+
   myFunction() {
     const x = document.getElementById("navDemo");
     if (x) {

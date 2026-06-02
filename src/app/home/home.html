@@ -1,0 +1,29 @@
+  <!-- Automatic Slideshow Images -->
+  <div class="hero-slider">
+    <div class="slide" [class.active]="currentSlide === 0">
+      <img src="https://www.w3schools.com/w3images/la.jpg" alt="Los Angeles">
+      <div class="slide-content">
+        <h3>Los Angeles</h3>
+        <p>We had the best time playing at Venice Beach!</p>
+      </div>
+    </div>
+    <div class="slide" [class.active]="currentSlide === 1">
+      <img src="https://www.w3schools.com/w3images/ny.jpg" alt="New York">
+      <div class="slide-content">
+        <h3>New York</h3>
+        <p>The atmosphere in New York is lorem ipsum.</p>
+      </div>
+    </div>
+    <div class="slide" [class.active]="currentSlide === 2">
+      <img src="https://www.w3schools.com/w3images/chicago.jpg" alt="Chicago">
+      <div class="slide-content">
+        <h3>Chicago</h3>
+        <p>Thank you, Chicago - A night we won't forget.</p>
+      </div>
+    </div>
+    <div class="slider-dots">
+      <span class="dot" [class.active]="currentSlide === 0" (click)="goToSlide(0)"></span>
+      <span class="dot" [class.active]="currentSlide === 1" (click)="goToSlide(1)"></span>
+      <span class="dot" [class.active]="currentSlide === 2" (click)="goToSlide(2)"></span>
+    </div>
+  </div>
