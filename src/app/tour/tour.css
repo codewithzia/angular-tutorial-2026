@@ -187,6 +187,10 @@
   backdrop-filter: blur(5px);
 }
 
+.ticket-modal.show {
+  display: block;
+}
+
 .modal-content {
   background: #1a1a1a;
   border: 1px solid #333;
@@ -344,6 +348,37 @@
 
 .help-text a:hover {
   color: white;
+}
+
+.error-text {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.alert {
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.alert-success {
+  background: #1b3a1b;
+  color: #7bed9f;
+  border: 1px solid #2f5e2f;
+}
+
+.alert-error {
+  background: #3a1b1b;
+  color: #ff6b6b;
+  border: 1px solid #5e2f2f;
+}
+
+.btn-pay:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 @media (max-width: 768px) {
