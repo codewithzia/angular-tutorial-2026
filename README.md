@@ -26,7 +26,7 @@ Watch the full tutorial here:
 
 ## 🛠 Technologies Used
 
-- Angular 17+  
+- Angular 20+  
 - Firebase  
 - TypeScript  
 - Bootstrap (optional)  
