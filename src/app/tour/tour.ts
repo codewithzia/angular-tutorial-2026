@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { TourTicketService } from '../services/tour-ticket.service';
 import { TicketOrder } from '../models/ticket-order';
+import { TourService } from '../services/tour.service';
+import { Tour } from '../models/tour';
 
 @Component({
   selector: 'app-tour',
@@ -15,9 +17,22 @@ import { TicketOrder } from '../models/ticket-order';
   templateUrl: './tour.html',
   styleUrl: './tour.css',
 })
-export class Tour {
+export class TourComponent implements OnInit {
+
   private readonly fb = inject(FormBuilder);
   private readonly ticketService = inject(TourTicketService);
+  private readonly tourService = inject(TourService);
+
+  tours = signal<Tour[]>([]);
+  
+   ngOnInit(): void {
+  this.tourService.getAllTours().subscribe((tours) => {
+      setTimeout(() => {
+        this.tours.set(tours);
+        console.log('Tours loaded:', this.tours());
+      }, 0);
+    });
+  }
 
   ticketForm: FormGroup = this.fb.group({
     quantity: [1, [Validators.required, Validators.min(1)]],

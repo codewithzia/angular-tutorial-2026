@@ -23,43 +23,17 @@
       </div>
 
       <div class="tour-cards">
-        <div class="tour-card">
+        <div class="tour-card" *ngFor="let tour of tours()">
           <div class="tour-image">
-            <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="New York">
+            <img [src]="tour.image" [alt]="tour.location">
             <div class="tour-overlay">
-              <button class="tour-buy-btn" (click)="openModal('New York', 'Fri 27 Nov 2016')">Buy Tickets</button>
+              <button class="tour-buy-btn" (click)="openModal(tour.location, tour.date)">Buy Tickets</button>
             </div>
           </div>
           <div class="tour-info">
-            <h3 class="tour-city">New York</h3>
-            <p class="tour-date">Fri 27 Nov 2016</p>
-            <p class="tour-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-          </div>
-        </div>
-        <div class="tour-card">
-          <div class="tour-image">
-            <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
-            <div class="tour-overlay">
-              <button class="tour-buy-btn" (click)="openModal('Paris', 'Sat 28 Nov 2016')">Buy Tickets</button>
-            </div>
-          </div>
-          <div class="tour-info">
-            <h3 class="tour-city">Paris</h3>
-            <p class="tour-date">Sat 28 Nov 2016</p>
-            <p class="tour-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-          </div>
-        </div>
-        <div class="tour-card">
-          <div class="tour-image">
-            <img src="https://www.w3schools.com/w3images/sanfran.jpg" alt="San Francisco">
-            <div class="tour-overlay">
-              <button class="tour-buy-btn" (click)="openModal('San Francisco', 'Sun 29 Nov 2016')">Buy Tickets</button>
-            </div>
-          </div>
-          <div class="tour-info">
-            <h3 class="tour-city">San Francisco</h3>
-            <p class="tour-date">Sun 29 Nov 2016</p>
-            <p class="tour-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <h3 class="tour-city">{{ tour.location }}</h3>
+            <p class="tour-date">{{ tour.date }}</p>
+            <p class="tour-description">{{ tour.description }}</p>
           </div>
         </div>
       </div>

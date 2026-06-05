@@ -20,6 +20,10 @@ export const routes: Routes = [
     },
     {
         path: 'tour',
-        loadComponent: () => import('./tour/tour').then(m => m.Tour)
+        loadComponent: () => import('./tour/tour').then(m => m.TourComponent)
+    },
+    {
+        path: 'admin',
+        loadChildren: () => import('./admin/admin-module').then(m => m.adminRoutes)
     }
 ];
