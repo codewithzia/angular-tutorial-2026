@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../services/auth-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
-  imports: [RouterLink],
+  imports: [RouterLink,CommonModule],
   templateUrl: './nav.html',
   styleUrl: './nav.css',
 })
 export class Nav {
-
+  authService = inject(AuthService);
+  loggedIn = this.authService.isLoggedIn;
   myFunction() {
     const x = document.getElementById("navDemo");
     if (x) {
@@ -18,5 +21,8 @@ export class Nav {
         x.className = x.className.replace(" w3-show", "");
       }
     }
+  }
+  logout() {
+    this.authService.logout();
   }
 }
