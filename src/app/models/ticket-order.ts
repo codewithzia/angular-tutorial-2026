@@ -7,4 +7,5 @@ export interface TicketOrder {
   unitPrice: number;
   totalPrice: number;
   createdAt?: Date;
+  userId?: string;
 }

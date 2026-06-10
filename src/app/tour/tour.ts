@@ -39,6 +39,7 @@ export class TourComponent implements OnInit {
   ticketForm: FormGroup = this.fb.group({
     quantity: [1, [Validators.required, Validators.min(1)]],
     email: ['', [Validators.required, Validators.email]],
+    userId: [''],
   });
 
   showModal = false;
@@ -57,7 +58,8 @@ export class TourComponent implements OnInit {
     this.submitSuccess = false;
     this.submitError = '';
     const userEmail = this.authService.userData()?.email ?? '';
-    this.ticketForm.reset({ quantity: 1, email: userEmail });
+    const userId = this.authService.userData()?.uid ?? '';
+    this.ticketForm.reset({ quantity: 1, email: userEmail, userId: userId });
   }
 
   closeModal(): void {
@@ -77,6 +79,7 @@ export class TourComponent implements OnInit {
 
     const quantity = this.ticketForm.value.quantity as number;
     const order: TicketOrder = {
+      userId: this.ticketForm.value.userId as string,
       city: this.selectedCity,
       date: this.selectedDate,
       quantity,

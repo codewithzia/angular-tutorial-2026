@@ -30,11 +30,11 @@ export const routes: Routes = [
         loadChildren: () => import('./admin/admin-module').then(m => m.adminRoutes)
     },
     {
-        path: 'register',
-        loadComponent: () => import('./register.component/register.component').then(m => m.RegisterComponent)
-    },
-    {
         path: 'login',
         loadComponent: () => import('./login.component/login.component').then(m => m.LoginComponent)
+    },
+    {
+        path:'register',
+        loadComponent:() => import('./register.component/register.component').then(m => m.RegisterComponent)
     }
 ];

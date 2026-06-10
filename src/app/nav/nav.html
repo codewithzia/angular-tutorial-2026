@@ -15,8 +15,8 @@
       </div>
     </div>
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
-    <a routerLink="/register" class="w3-padding-large w3-hover-red w3-hide-small w3-right" *ngIf="!loggedIn()">REGISTER</a>
     <a routerLink="/login" class="w3-padding-large w3-hover-red w3-hide-small w3-right" *ngIf="!loggedIn()">LOGIN</a>
+    <a routerLink="/register" class="w3-padding-large w3-hover-red w3-hide-small w3-right" *ngIf="!loggedIn()">REGISTER</a>
     <a (click)="logout()" class="w3-padding-large w3-hover-red w3-hide-small w3-right" *ngIf="loggedIn()">LOGOUT</a>
     <a routerLink="/admin" class="w3-padding-large w3-hover-red w3-hide-small w3-right" *ngIf="isAdmin()">ADMIN</a>
   </div>
@@ -29,8 +29,9 @@
   <a routerLink="/tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
   <a routerLink="/contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-  <a routerLink="/register" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()" *ngIf="!loggedIn()">REGISTER</a>
   <a routerLink="/login" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()" *ngIf="!loggedIn()">LOGIN</a>
+  <a routerLink="/register" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()" *ngIf="!loggedIn()">REGISTER</a>
+
   <a (click)="logout()" class="w3-bar-item w3-button w3-padding-large" *ngIf="loggedIn()">LOGOUT</a>
   <a routerLink="/admin" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()" *ngIf="isAdmin()">ADMIN</a>
 </div>

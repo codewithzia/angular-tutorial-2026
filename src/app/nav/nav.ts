@@ -12,10 +12,7 @@ import { CommonModule } from '@angular/common';
 export class Nav {
   authService = inject(AuthService);
   loggedIn = this.authService.isLoggedIn;
-  isAdmin = computed(() => {
-    const data = this.authService.userData();
-    return data?.role === 'admin' || data?.email === 'admin@example.com';
-  });
+  isAdmin = this.authService.isAdmin;
   myFunction() {
     const x = document.getElementById("navDemo");
     if (x) {

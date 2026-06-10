@@ -26,7 +26,11 @@ export class LoginComponent {
       const loginData = this.loginForm.value;
       this.authService.login(loginData.email, loginData.password).then((response) => {
         console.log('Login successful', response);
-        this.router.navigate(['/admin']);
+        if (this.authService.isAdmin()) {
+          this.router.navigate(['/admin']);
+        } else {
+          this.router.navigate(['/tour']);
+        }
       }).catch((error) => {
         console.log('Login failed', error);
       });
