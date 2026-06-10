@@ -10,6 +10,7 @@ import { TourTicketService } from '../services/tour-ticket.service';
 import { TicketOrder } from '../models/ticket-order';
 import { TourService } from '../services/tour.service';
 import { Tour } from '../models/tour';
+import { AuthService } from '../services/auth-service';
 
 @Component({
   selector: 'app-tour',
@@ -22,6 +23,7 @@ export class TourComponent implements OnInit {
   private readonly fb = inject(FormBuilder);
   private readonly ticketService = inject(TourTicketService);
   private readonly tourService = inject(TourService);
+  private readonly authService = inject(AuthService);
 
   tours = signal<Tour[]>([]);
   
@@ -54,7 +56,8 @@ export class TourComponent implements OnInit {
     this.showModal = true;
     this.submitSuccess = false;
     this.submitError = '';
-    this.ticketForm.reset({ quantity: 1, email: '' });
+    const userEmail = this.authService.userData()?.email ?? '';
+    this.ticketForm.reset({ quantity: 1, email: userEmail });
   }
 
   closeModal(): void {

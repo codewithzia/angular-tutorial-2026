@@ -26,7 +26,12 @@ export const routes: Routes = [
     {
         path: 'admin',
         canActivate: [AuthGuard],
+        data: { role: 'admin' },
         loadChildren: () => import('./admin/admin-module').then(m => m.adminRoutes)
+    },
+    {
+        path: 'register',
+        loadComponent: () => import('./register.component/register.component').then(m => m.RegisterComponent)
     },
     {
         path: 'login',

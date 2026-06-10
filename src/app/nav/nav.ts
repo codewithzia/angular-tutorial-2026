@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../services/auth-service';
 import { CommonModule } from '@angular/common';
@@ -12,6 +12,10 @@ import { CommonModule } from '@angular/common';
 export class Nav {
   authService = inject(AuthService);
   loggedIn = this.authService.isLoggedIn;
+  isAdmin = computed(() => {
+    const data = this.authService.userData();
+    return data?.role === 'admin' || data?.email === 'admin@example.com';
+  });
   myFunction() {
     const x = document.getElementById("navDemo");
     if (x) {
